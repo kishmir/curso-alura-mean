@@ -1,0 +1,14 @@
+Começar servidor (sem npm):
+> node server
+(tem que estar na mesma pasta do "server.js")
+
+Começar servidor (com npm):
+> npm start
+
+
+Fechar servidor:
+(apenas "CTRL+C" no terminal)
+
+
+Interrogação do teclado no idioma pt-br:
+ALT da direita + W
