@@ -1,6 +1,7 @@
 var express = require("express");
-var app = express();
 var consign = require("consign");
+
+var app = express();
 
 app.use(express.static("./public"));
 
