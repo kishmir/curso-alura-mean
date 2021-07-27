@@ -1,11 +1,5 @@
-module.exports = function (app) {
-    app.get("/v1/grupos", function (req, res) {
-        var grupos = [
-            { _id: 1, nome: "esportes" },
-            { _id: 2, nome: "lugares" },
-            { _id: 3, nome: "animais" },
-        ];
+var api = require("../api/grupo");
 
-        res.json(grupos);
-    });
+module.exports = function (app) {
+    app.get("/v1/grupos", api.lista);
 };
