@@ -13,6 +13,8 @@ var fotos = [
     },
 ];
 
+var contador = fotos.length;
+
 api.lista = function (req, res) {
     res.json(fotos);
 };
@@ -32,5 +34,13 @@ api.removePorId = function(req, res) {
 
     res.sendStatus(204);
 };
+
+api.adiciona = function(req, res) {
+    var foto = req.body;
+    foto._id = ++contador;
+    fotos.push(foto);
+
+    res.json(foto);
+}
 
 module.exports = api;
