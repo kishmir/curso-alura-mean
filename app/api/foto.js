@@ -41,9 +41,29 @@ module.exports = function (app) {
         );
     };
 
-    api.adiciona = function (req, res) {};
+    api.adiciona = function (req, res) {
+        model.create(req.body).then(
+            function (foto) {
+                res.json(foto);
+            },
+            function (error) {
+                console.log(error);
+                res.status(500).json(error);
+            }
+        );
+    };
 
-    api.atualiza = function (req, res) {};
+    api.atualiza = function (req, res) {
+        model.findByIdAndUpdate(req.params.id, req.body).then(
+            function (foto) {
+                res.json(foto);
+            },
+            function (error) {
+                console.log(error);
+                res.status(500).json(error);
+            }
+        );
+    };
 
     return api;
 };
