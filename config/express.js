@@ -7,6 +7,10 @@ var app = express();
 app.use(express.static("./public"));
 app.use(bodyParser.json());
 
-consign({ cwd: "app" }).include("api").then("routes").into(app);
+consign({ cwd: "app" })
+.include("models")
+.then("api")
+.then("routes")
+.into(app);
 
 module.exports = app;
