@@ -6,7 +6,7 @@ module.exports = function (app) {
     api.lista = function (req, res) {
         var model = mongoose.model("Foto");
 
-        model.find({}).then(
+        model.find().then(
             function (fotos) {
                 res.json(fotos);
             },
