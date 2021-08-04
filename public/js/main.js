@@ -22,5 +22,10 @@ angular
             controller: "FotoController",
         });
 
+        $routeProvider.when("/login", {
+            templateUrl: "partials/login.html",
+            controller: "LoginController",
+        });
+
         $routeProvider.otherwise({ redirectTo: "/fotos" });
     });
