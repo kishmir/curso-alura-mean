@@ -8,7 +8,7 @@ angular
             var usuario = $scope.usuario;
 
             $http
-                .post("/autenticcar", {
+                .post("/autenticar", {
                     login: usuario.login,
                     senha: usuario.senha,
                 })
