@@ -35,21 +35,22 @@ module.exports = function (app) {
     };
 
     api.verificaToken = function (req, res, next) {
-        console.log(req.headers);
         var token = req.headers["x-access-token"];
         if (token) {
-            console.log("Verificando token");
+            console.log("Token recebido, decodificando");
             jwt.verify(token, app.get("secret"), function (err, decoded) {
                 if (err) {
                     console.log("Token rejeitado");
-                    res.sendStatus(401);
+                    return res.sendStatus(401);
+                } else {
+                    console.log("Token aceito");
+                    req.usuario = decoded;
+                    next();
                 }
-                req.usuario = decoded;
-                next();
             });
         } else {
-            console.log("Token não foi enviado");
-            res.sendStatus(401);
+            console.log("Nenhum token enviado");
+            return res.sendStatus(401);
         }
     };
 

@@ -7,6 +7,9 @@ angular
         "meusServicos",
     ])
     .config(function ($routeProvider, $locationProvider, $httpProvider) {
+
+        $httpProvider.interceptors.push("tokenInterceptor");
+
         $routeProvider.when("/fotos", {
             templateUrl: "partials/principal.html",
             controller: "FotosController",
