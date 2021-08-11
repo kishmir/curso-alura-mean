@@ -17,8 +17,8 @@ angular
                         $location.path("/");
                     },
                     function (error) {
-                        console.log(error);
-                        $scope.mensagem = "Login ou senha inválidos";
+                        $scope.usuario = {};
+                        $scope.mensagem = "Login/senha incorretos";
                     }
                 );
         };

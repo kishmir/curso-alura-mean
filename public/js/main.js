@@ -6,7 +6,7 @@ angular
         "ngResource",
         "meusServicos",
     ])
-    .config(function ($routeProvider, $locationProvider) {
+    .config(function ($routeProvider, $locationProvider, $httpProvider) {
         $routeProvider.when("/fotos", {
             templateUrl: "partials/principal.html",
             controller: "FotosController",
